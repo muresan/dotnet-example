@@ -1,0 +1,13 @@
+name: dotnet
+description: A dotnet example
+version: 0.0.1
+kubeVersion: ">=1.2.0"
+keywords:
+  - http
+  - dotnet
+home: https://github.com/muresan/
+sources:
+  - https://hub.docker.com/r/microsoft/dotnet-samples//
+maintainers:
+  - name: noone
+    email: no@one.com
