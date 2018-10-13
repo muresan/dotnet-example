@@ -38,9 +38,6 @@ spec:
               containerPort: 80
               protocol: TCP
           # This (and the volumes section below) mount the config map as a volume.
-          volumeMounts:
-            - mountPath: /usr/share/dotnet/html
-              name: wwwdata-volume
           resources:
 # Allow chart users to specify resources. Usually, no default should be set, so this is left to be a conscious
 # choice to the chart users and avoids that charts don't run out of the box on, e. g., Minikube when high resource
@@ -51,7 +48,3 @@ spec:
       # Node selectors can be important on mixed Windows/Linux clusters.
 {{ toYaml .Values.nodeSelector | indent 8 }}
     {{- end }}
-      volumes:
-        - name: wwwdata-volume
-          configMap:
-            name: {{ template "dotnet.fullname" . }}
